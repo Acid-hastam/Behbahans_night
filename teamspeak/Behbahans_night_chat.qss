@@ -1,0 +1,321 @@
+/* ====================================================================
+ * Behbahans Night - TeamSpeak 3 ChatLog Stylesheet
+ * Aesthetic: Midnight Navy & Glowing Cyan (#38BDF8)
+ * ==================================================================== */
+
+/*
+ * Dark Qt StyleSheet
+ * Special file for ChatLog, loaded in addition to global default.qss stylesheet
+ *
+ * Copyright (c) 2020 random-host.tv
+ *
+ * Supported HTML Subset:
+ *
+ *  TeamSpeak 3's text chat is able to display rich text, specified using a very limited subset of HTML 4 markup.
+ *  Please refer to this page for more information:
+ *
+ *  http://qt-project.org/doc/qt-4.8/richtext-html-subset.html#css-properties
+ *
+ * ===
+ * === Chat Message Syntax Example:
+ * ===
+ *
+ *  <p class="{PRIMARY_CLASS}">
+ *    <span class="Body">
+ *      <img src="...">
+ *      <span class="{SECONDARY_CLASS}">...</span>
+ *      <a class="{SECONDARY_CLASS}" href="...">...</a>:
+ *      <spanclass="{SECONDARY_CLASS}">
+ *        ...
+ *      </span>
+ *  </p>
+ *
+ * ===
+ * === Primary Classes:
+ * ===
+ *
+ *  - TextMessage_Normal                   :: informational message
+ *  - TextMessage_Welcome                  :: server welcome message
+ *  - TextMessage_HostMsg                  :: server host message
+ *  - TextMessage_Message                  :: text messages (details below)
+ *  - TextMessage_Poke                     :: poke messages
+ *  - TextMessage_Connected                :: own client connected to server
+ *  - TextMessage_Disconnected             :: own client disconnected from server
+ *  - TextMessage_ClientConnected          :: other client connected to server
+ *  - TextMessage_ClientDisconnected       :: other client connected from server
+ *  - TextMessage_ClientJoined             :: other client joined channel
+ *  - TextMessage_ClientLeft               :: other client left channel
+ *  - TextMessage_ClientSwitched           :: own/other client switched channel
+ *  - TextMessage_ClientDropped            :: own/other client timed out
+ *  - TextMessage_ClientKicked             :: own/other client kicked
+ *  - TextMessage_ClientBanned             :: own/other client banned
+ *  - TextMessage_ChannelCreated           :: channel created
+ *  - TextMessage_ChannelDeleted           :: channel deleted
+ *  - TextMessage_ChannelMoved             :: channel parent changed
+ *  - TextMessage_ChannelEdited            :: channel edited
+ *  - TextMessage_ServerEdited             :: server edited
+ *  - TextMessage_ServerError              :: server error
+ *  - TextMessage_GroupAssigned            :: channel/server group assigned
+ *  - TextMessage_GroupRevoked             :: channel/server group revoked
+ *  - TextMessage_TalkPowerAssigned        :: talk power granted
+ *  - TextMessage_TalkPowerRevoked         :: talk power revoked
+ *  - TextMessage_TalkPowerRequested       :: talk power requested
+ *  - TextMessage_BeginHistory             :: talk power revoked
+ *  - TextMessage_EndHistory               :: talk power revoked
+ *
+ *  The TextMessage_Message class can be used in combination with additional classes to identify specific messages.
+ *  Currently, we provide the following:
+ *
+ *  - Incoming                             :: incoming text messages
+ *  - Outgoing                             :: outgoing text messages
+ *  - Friend                               :: text messages sent by friends
+ *  - Blocked                              :: text messages sent by blocked users
+ *  - Private                              :: text messages in a private chat tab
+ *  - Public                               :: text messages in a channel/server chat tab
+ *
+ *  The CSS definition for a private text message sent by a friend would look like this:
+ *
+ *  .TextMessage_Message.Friend.Private { ... }
+ *
+ * ===
+ * === Secondary Classes (used within messages):
+ * ===
+ *
+ *  - TextMessage_UserLink                 :: user nickname
+ *  - TextMessage_ChannelLink              :: channel name
+ *  - TextMessage_ServerLink               :: server name
+ *  - TextMessage_OfflineLink              :: offline unread message(s) count
+ *  - TextMessage_Time                     :: message time
+ *  - TextMessage_Text                     :: message text
+ */
+
+/* no padding around chat lines */
+p {
+  padding: 0;
+  margin: 0;
+}
+
+/* clickable text, user nicknames, and links (bold, cyan) */
+.TextMessage_UserLink,
+.TextMessage_User,
+.TextMessage_Friend,
+.TextMessage_ChannelLink,
+.TextMessage_ServerLink,
+.TextMessage_Link,
+a,
+a:link,
+a:visited {
+  color: #38BDF8;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a:hover,
+.TextMessage_UserLink:hover,
+.TextMessage_ChannelLink:hover,
+.TextMessage_ServerLink:hover,
+.TextMessage_Link:hover {
+  color: #0284C7;
+  text-decoration: underline;
+}
+
+/* unread offline messages link (bold, gold) */
+.TextMessage_OfflineLink {
+  color: #F59E0B;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* server host name in connection messages (bold) */
+.TextMessage_HostName {
+  font-weight: bold;
+  color: #F1F5F9;
+}
+
+/* important messages (green) */
+.TextMessage_Welcome,
+.TextMessage_HostMessage {
+  color: #10B981;
+  font-weight: bold;
+}
+
+/* poke messages (amber) */
+.TextMessage_Poke {
+  color: #F59E0B;
+  font-weight: bold;
+}
+
+/* change messages (blue) */
+.TextMessage_ChannelEdited,
+.TextMessage_ServerEdited,
+.TextMessage_TalkPowerRequested,
+.TextMessage_TalkPowerAssigned,
+.TextMessage_ChannelCreated,
+.TextMessage_GroupAssigned,
+.TextMessage_ChannelDeleted,
+.TextMessage_GroupRevoked,
+.TextMessage_TalkPowerRevoked
+{
+  color: #38BDF8;
+}
+
+/* channel switch and action messages (readable muted slate) */
+.TextMessage_ClientSwitched,
+.TextMessage_ChannelMoved
+{
+  color: #7C8BA1;
+}
+
+/* informational messages (grey) */
+.TextMessage_Connected,
+.TextMessage_ClientConnected,
+.TextMessage_ClientJoined,
+.TextMessage_Disconnected,
+.TextMessage_ClientDisconnected,
+.TextMessage_ClientLeft,
+.TextMessage_ClientDropped
+{
+  color: #64748B;
+}
+
+/* normal text message */
+.TextMessage_Normal {
+  color: #E2E8F0;
+}
+
+/* warning messages (red) */
+.TextMessage_ClientKicked,
+.TextMessage_ClientBanned {
+  color: #EF4444;
+}
+
+/* message timestamp (cool gray) */
+.TextMessage_Time {
+  color: #64748B;
+  font-weight: normal;
+}
+
+/* chat history markers (grey) */
+.TextMessage_BeginHistory,
+.TextMessage_EndHistory {
+  color: #64748B;
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* error messages */
+.TextMessage_ServerError {
+  color: #EF4444;
+  font-weight: bold;
+}
+
+/* Infoframe Elements */
+.InfoFrame_Title {
+  font-size: x-large;
+  color: #38BDF8;
+  font-weight: bold;
+}
+
+.InfoFrame_Title a,
+.InfoFrame_Title a:link,
+.InfoFrame_Title a:visited,
+.InfoFrame_Title .TextMessage_UserLink,
+.InfoFrame_Title .TextMessage_ChannelLink,
+.InfoFrame_Title .TextMessage_ServerLink {
+  color: #38BDF8;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.InfoFrame_Title a:hover {
+  color: #0284C7;
+  text-decoration: underline;
+}
+
+.InfoFrame_Title .InfoFrame_CustomNick {
+  color: #38BDF8;
+}
+
+.InfoFrame_Table {
+  border-collapse: collapse;
+  border-spacing: 0px;
+  color: #F1F5F9;
+}
+
+.InfoFrame_Table td {
+  padding: 0px 4px 0px 1px;
+  color: #F1F5F9;
+}
+
+.InfoFrame_Table a,
+.InfoFrame_Table a:link,
+.InfoFrame_Table a:visited {
+  color: #38BDF8;
+  text-decoration: none;
+}
+
+.InfoFrame_Table a:hover {
+  color: #0284C7;
+  text-decoration: underline;
+}
+
+.Highlight,
+.InfoFrame_Table td.Highlight {
+  color: #38BDF8;
+}
+
+.Important,
+.InfoFrame_Table td.Important {
+  color: #EF4444;
+}
+
+.Active,
+.InfoFrame_Table td.Active {
+  color: #10B981;
+}
+
+.Inactive,
+.InfoFrame_Table td.Inactive {
+  color: #64748B;
+}
+
+.InfoFrame_Table td.Label {
+  font-weight: bold;
+  color: #F1F5F9;
+}
+
+.InfoFrame_Table td.Bottom {
+  vertical-align: bottom;
+}
+
+.InfoFrame_Table td.List {
+  padding: 0px 1px 0px 8px;
+}
+
+.InfoFrame_Table td.Space-Top {
+  padding: 10px 0px 0px 0px;
+}
+
+.InfoFrame_Table td.Space-Bot {
+  padding: 0px 0px 10px 0px;
+}
+
+.InfoFrame_Table.Space-Top {
+  margin: 10px 0px 0px 0px;
+}
+
+.InfoFrame_Table.Space-Bot {
+  margin: 0px 0px 10px 0px;
+}
+
+a,
+a:link,
+a:visited {
+  color: #38BDF8;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #0284C7;
+  text-decoration: underline;
+}

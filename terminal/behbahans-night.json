@@ -1,0 +1,33 @@
+{
+  "$schema": "https://aka.ms/terminal-profiles-schema",
+  "schemes": [
+    {
+      "name": "Behbahans Night",
+      "background": "#08090C",
+      "foreground": "#F0F2F5",
+      "cursorColor": "#FFFFFF",
+      "selectionBackground": "#1E2330",
+      "black": "#1A1D24",
+      "brightBlack": "#5A6275",
+      "red": "#FF5C6C",
+      "brightRed": "#FF7A88",
+      "green": "#3BD671",
+      "brightGreen": "#5EEAD4",
+      "yellow": "#FBBF24",
+      "brightYellow": "#FDE047",
+      "blue": "#4E75FE",
+      "brightBlue": "#7C9BFF",
+      "purple": "#9D65FF",
+      "brightPurple": "#C499FF",
+      "cyan": "#22D3EE",
+      "brightCyan": "#67E8F9",
+      "white": "#E2E8F0",
+      "brightWhite": "#FFFFFF"
+    }
+  ],
+  "profiles": {
+    "defaults": {
+      "colorScheme": "Behbahans Night"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "Behbahans Night",
+  "description": "A cozy late-night dark theme featuring deep obsidian navy backgrounds and glowing cyan accents.",
+  "preview": "screenshots/spicetify.png",
+  "usercss": "spicetify/user.css",
+  "schemes": "spicetify/color.ini",
+  "readme": "README.md",
+  "branch": "main",
+  "authors": [
+    {
+      "name": "Acid-hastam",
+      "url": "https://github.com/Acid-hastam"
+    }
+  ],
+  "tags": ["dark", "midnight", "cyan", "obsidian", "glow"]
+}

@@ -1,0 +1,871 @@
+/* ====================================================================
+   Behbahans_Night - Spicetify User Stylesheet
+   Aesthetic: Cozy Late-Night Lo-Fi Pixel Art & Midnight Obsidian
+   Accent: Glowing Neon Sky-Blue (#38BDF8)
+   ==================================================================== */
+
+/* --------------------------------------------------------------------
+   1. ROOT VARIABLES & THEME ACCENTS
+   -------------------------------------------------------------------- */
+:root {
+  --player-bar-height: 90px;
+  --behbahans-accent: #38BDF8;
+  --behbahans-accent-hover: #67E8F9;
+  --behbahans-accent-glow: 0 0 12px rgba(56, 189, 248, 0.5);
+  --behbahans-accent-hover-glow: 0 0 18px rgba(56, 189, 248, 0.75), 0 0 6px #38BDF8;
+  --behbahans-bg-main: #0B0E14;
+  --behbahans-bg-elevated: #141824;
+  --behbahans-bg-player: #0D1017;
+  --behbahans-border-subtle: #1E2538;
+  --behbahans-player-border: rgba(56, 189, 248, 0.15);
+  --behbahans-sidebar-divider: rgba(56, 189, 248, 0.12);
+  --behbahans-radius-sm: 8px;
+  --behbahans-radius-md: 10px;
+  --behbahans-radius-lg: 12px;
+}
+
+/* --------------------------------------------------------------------
+   ROOT CANVAS & WALLPAPER BLEED SEAL
+   -------------------------------------------------------------------- */
+html,
+body,
+#main,
+.Root,
+.Root__top-container {
+  background-color: var(--spice-main, #0B0E14) !important;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+  height: 100% !important;
+}
+
+/* --------------------------------------------------------------------
+   HARSH SEAM / GAP ABOVE BOTTOM NOW-PLAYING BAR
+   Remove grid gaps, excessive margins, and apply a sleek subtle 1px border-top
+   -------------------------------------------------------------------- */
+.Root__top-container {
+  gap: 0 !important;
+  grid-gap: 0 !important;
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.Root__now-playing-bar {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  background: transparent !important;
+}
+
+.main-nowPlayingBar-container,
+footer.main-nowPlayingBar-container {
+  position: relative !important;
+  bottom: 0 !important;
+  margin: 0 !important;
+  margin-bottom: 0 !important;
+  width: 100% !important;
+  border-radius: 0 0 8px 8px !important;
+  border: none !important;
+  border-top: 1px solid var(--behbahans-player-border) !important;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.5) !important;
+  background-color: var(--spice-player, #0D1017) !important;
+  backdrop-filter: blur(16px);
+  box-sizing: border-box !important;
+  z-index: 100;
+}
+
+/* --------------------------------------------------------------------
+   TOP FILTER CHIPS SECTION (Home View)
+   -------------------------------------------------------------------- */
+.main-home-filterChipsSection,
+[data-testid="home-filter-chips"],
+.search-searchCategory-categoryGrid {
+  position: relative !important;
+  margin-top: 0 !important;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+  overflow: visible !important;
+  background-color: var(--behbahans-bg-main) !important;
+  background-image: none !important;
+  z-index: 5 !important;
+}
+
+.main-topBar-container,
+.main-topBar-background,
+.Root__top-bar,
+.Root__top-bar header {
+  background-color: var(--behbahans-bg-main) !important;
+  background-image: none !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  z-index: 10 !important;
+}
+
+/* Kill dynamic purple background header overlays */
+.main-home-homeHeader,
+.x-entityHeader-overlay,
+.x-actionBarBackground-background,
+.main-actionBarBackground-background,
+.main-entityHeader-overlay,
+.main-entityHeader-backgroundColor,
+.main-entityHeader-background,
+.main-entityHeader-background.main-entityHeader-gradient,
+.main-topBar-overlay,
+.under-main-view,
+[data-testid="top-bar-background"],
+.main-view-container__scroll-node-child-wrapper {
+  background: var(--behbahans-bg-main) !important;
+  background-color: var(--behbahans-bg-main) !important;
+  background-image: none !important;
+}
+
+/* --------------------------------------------------------------------
+   [BUG FIX 2] QUICK-PLAY GRID CARDS (Image 2)
+   - Hide play button container by default (opacity: 0; pointer-events: none)
+   - Reveal only on card hover
+   - Position: absolute; right: 8px; top: 50%; transform: translateY(-50%)
+   - Text ellipsis on track titles
+   - Solid dark triangle icon (fill: #0B0E14 !important; stroke: none !important)
+   -------------------------------------------------------------------- */
+/* Card wrapper relative positioning */
+[data-testid="shortcut-item"],
+.view-homeShortcutsGrid-shortcut,
+.view-homeShortcutsGrid-equalFilterChip {
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+/* Track title truncation inside shortcut cards */
+[data-testid="shortcut-item"] [dir="auto"],
+[data-testid="shortcut-item"] span,
+[data-testid="shortcut-item"] div[class*="Title"],
+[data-testid="shortcut-item"] a,
+.view-homeShortcutsGrid-shortcut [dir="auto"],
+.view-homeShortcutsGrid-shortcut span,
+.view-homeShortcutsGrid-title {
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  padding-right: 48px !important;
+}
+
+/* Play button container: hidden by default, pinned to right */
+[data-testid="shortcut-item"] button,
+[data-testid="shortcut-item"] [data-testid="play-button"],
+[data-testid="shortcut-item"] .view-homeShortcutsGrid-playButton,
+.view-homeShortcutsGrid-shortcut button,
+.view-homeShortcutsGrid-shortcut .view-homeShortcutsGrid-playButton,
+.view-homeShortcutsGrid-playButton,
+.main-card-card .main-card-PlayButtonContainer,
+.main-heroCard-card .main-card-PlayButtonContainer {
+  position: absolute !important;
+  right: 8px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1), transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.2s !important;
+  z-index: 5 !important;
+}
+
+/* Reveal only on hover */
+[data-testid="shortcut-item"]:hover button,
+[data-testid="shortcut-item"]:hover [data-testid="play-button"],
+[data-testid="shortcut-item"]:hover .view-homeShortcutsGrid-playButton,
+.view-homeShortcutsGrid-shortcut:hover button,
+.view-homeShortcutsGrid-shortcut:hover .view-homeShortcutsGrid-playButton,
+.main-card-card:hover .main-card-PlayButtonContainer,
+.main-heroCard-card:hover .main-card-PlayButtonContainer {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  transform: translateY(-50%) scale(1.04) !important;
+}
+
+/* Render play icon as clean, solid dark triangle (fill: #0B0E14; stroke: none) */
+[data-testid="shortcut-item"] button svg,
+[data-testid="shortcut-item"] button svg *,
+[data-testid="shortcut-item"] button svg path,
+[data-testid="shortcut-item"] [data-testid="play-button"] svg,
+[data-testid="shortcut-item"] [data-testid="play-button"] svg *,
+.view-homeShortcutsGrid-shortcut button svg,
+.view-homeShortcutsGrid-shortcut button svg *,
+.view-homeShortcutsGrid-shortcut button svg path,
+.main-card-PlayButtonContainer svg,
+.main-card-PlayButtonContainer svg * {
+  fill: #0B0E14 !important;
+  color: #0B0E14 !important;
+  stroke: none !important;
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  width: 16px !important;
+  height: 16px !important;
+  margin: auto !important;
+}
+
+/* --------------------------------------------------------------------
+   [BUG FIX 3] SEARCH BAR SHORTCUT BADGE / BLURRY HALO (Image 3)
+   Completely hide the redundant "Ctrl L" badge and any washed-out halo mask
+   -------------------------------------------------------------------- */
+.x-searchInput-searchInputContainer kbd,
+.main-globalNav-searchInputContainer kbd,
+.x-searchInput-searchInputContainer [class*="KeyboardShortcut"],
+.main-globalNav-searchInputContainer [class*="KeyboardShortcut"],
+.Root__top-bar kbd,
+form[role="search"] kbd,
+kbd {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* Search input focus */
+.x-searchInput-searchInputInput {
+  background-color: var(--spice-highlight) !important;
+  color: var(--spice-text) !important;
+  border: 1px solid var(--spice-highlight-elevated) !important;
+  border-radius: var(--behbahans-radius-md) !important;
+  padding: 6px 14px 6px 38px !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.x-searchInput-searchInputInput:focus {
+  border-color: var(--spice-button) !important;
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.4) !important;
+}
+
+/* --------------------------------------------------------------------
+   [BUG FIX 4] DJ ICON COVERED BY PERMANENT PLAY BUTTON IN SIDEBAR (Image 4)
+   Hide sidebar item play buttons by default, reveal only on row hover
+   -------------------------------------------------------------------- */
+.main-yourLibraryX-listRow .main-playButton-PlayButton,
+.main-yourLibraryX-listItem .main-playButton-PlayButton,
+.main-yourLibraryX-rowImage .main-playButton-PlayButton,
+.main-yourLibraryX-entryPoints .main-playButton-PlayButton,
+.Root__nav-bar .main-playButton-PlayButton,
+.main-yourLibraryX-listRow [data-testid="play-button"],
+.main-yourLibraryX-listItem [data-testid="play-button"],
+.main-yourLibraryX-rowImage [data-testid="play-button"],
+.main-yourLibraryX-listRow button[class*="play"],
+.main-yourLibraryX-rowImage button {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1), transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.2s !important;
+}
+
+.main-yourLibraryX-listRow:hover .main-playButton-PlayButton,
+.main-yourLibraryX-listItem:hover .main-playButton-PlayButton,
+.main-yourLibraryX-rowImage:hover .main-playButton-PlayButton,
+.main-yourLibraryX-entryPoints:hover .main-playButton-PlayButton,
+.Root__nav-bar .main-yourLibraryX-listRow:hover .main-playButton-PlayButton,
+.main-yourLibraryX-listRow:hover [data-testid="play-button"],
+.main-yourLibraryX-listItem:hover [data-testid="play-button"],
+.main-yourLibraryX-rowImage:hover [data-testid="play-button"],
+.main-yourLibraryX-listRow:hover button[class*="play"],
+.main-yourLibraryX-rowImage:hover button {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+
+/* --------------------------------------------------------------------
+   USER PROFILE AVATAR CONTAINER
+   -------------------------------------------------------------------- */
+.main-userWidget-box,
+button[data-testid="user-widget-link"],
+[data-testid="user-widget-link"],
+.main-userWidget-avatar,
+figure[data-testid="user-widget-avatar"],
+figure[data-testid="user-widget-avatar"] div,
+figure[data-testid="user-widget-avatar"] img,
+.main-avatar-avatar,
+.main-avatar-image {
+  border-radius: 50% !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+button[data-testid="user-widget-link"]:hover,
+.main-userWidget-box:hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-radius: 50% !important;
+}
+
+/* --------------------------------------------------------------------
+   MARKETPLACE CARD IMAGE CORNERS & CONTRAST
+   -------------------------------------------------------------------- */
+.marketplace-card-thumbnail,
+.marketplace-card-thumbnail img,
+.marketplace-card .main-card-imageContainer,
+.marketplace-card .main-card-imageContainer img,
+.marketplace-card .main-cardImage-imageWrapper,
+.marketplace-card .main-cardImage-imageWrapper img,
+.marketplace-card__image,
+.marketplace-card__image img,
+.marketplace-card figure,
+.marketplace-card figure img {
+  border-radius: 8px !important;
+  overflow: hidden !important;
+}
+
+.marketplace-card button,
+.marketplace-card button *,
+.marketplace-card button span,
+.marketplace-card .main-buttons-button,
+.marketplace-card .main-buttons-button *,
+.marketplace-card .main-buttons-button span,
+.marketplace-card .Button-sc-1dqy6lx-0,
+.marketplace-card__tag,
+.marketplace-card-tag,
+.marketplace-card [data-tag],
+#marketplace-body button,
+#marketplace-body button *,
+#marketplace-body button span {
+  color: #0B0E14 !important;
+  font-weight: 700 !important;
+}
+
+.marketplace-card button,
+.marketplace-card .main-buttons-button,
+.marketplace-card .Button-sc-1dqy6lx-0,
+#marketplace-body button,
+#marketplace-body .main-buttons-button {
+  background-color: var(--behbahans-accent) !important;
+}
+
+.marketplace-card button:hover,
+#marketplace-body button:hover {
+  background-color: var(--behbahans-accent-hover) !important;
+  color: #0B0E14 !important;
+}
+
+.marketplace-card {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  min-height: 320px !important;
+}
+
+.marketplace-card__tags,
+.marketplace-card-tags,
+.marketplace-card__bottom,
+.marketplace-card-footer,
+.marketplace-card > div:last-child {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  gap: 8px !important;
+  margin-top: auto !important;
+  padding-top: 8px !important;
+}
+
+.marketplace-card__tag,
+.marketplace-card-tag,
+.marketplace-tag {
+  display: inline-flex !important;
+  align-items: center !important;
+  height: 24px !important;
+  padding: 0 8px !important;
+  border-radius: 4px !important;
+  margin: 0 !important;
+}
+
+.marketplace-card button,
+.marketplace-card .main-buttons-button {
+  margin: 0 !important;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+}
+
+/* --------------------------------------------------------------------
+   PROGRESS BAR & VOLUME SLIDER THUMB VERTICAL CENTERING
+   -------------------------------------------------------------------- */
+.playback-bar .progress-bar,
+.playback-bar .x-progressBar-sliderArea,
+.playback-bar .x-progressBar-progressBarBg,
+.playback-progressbar,
+.volume-bar .progress-bar,
+.volume-bar .x-progressBar-sliderArea,
+.volume-bar .x-progressBar-progressBarBg {
+  display: flex !important;
+  align-items: center !important;
+  border-radius: 9999px !important;
+}
+
+.x-progressBar-fillColor,
+.progress-bar__fg,
+.playback-bar .progress-bar__fg,
+.playback-progressbar .progress-bar__fg {
+  background-color: var(--spice-button) !important;
+  border-radius: 9999px !important;
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.65), 0 0 4px #38BDF8 !important;
+  transition: box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.playback-bar:hover .x-progressBar-fillColor,
+.playback-bar:hover .progress-bar__fg,
+.x-progressBar-sliderArea:hover .x-progressBar-fillColor {
+  box-shadow: var(--behbahans-accent-hover-glow) !important;
+}
+
+.volume-bar .x-progressBar-fillColor,
+.volume-bar .progress-bar__fg {
+  background-color: var(--spice-button) !important;
+  box-shadow: 0 0 8px rgba(56, 189, 248, 0.5) !important;
+}
+
+.progress-bar__slider,
+.x-progressBar-slider,
+.x-progressBar-sliderArea .progress-bar__slider,
+[data-testid="playback-progressbar"] .progress-bar__slider,
+.volume-bar .progress-bar__slider,
+.volume-bar .x-progressBar-slider {
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  margin: 0 !important;
+  margin-top: 0 !important;
+  background-color: #FFFFFF !important;
+  border-radius: 50% !important;
+  width: 12px !important;
+  height: 12px !important;
+  box-shadow: 0 0 8px 2px #38BDF8, 0 0 16px 4px rgba(56, 189, 248, 0.75) !important;
+  transition: transform 0.15s ease, box-shadow 0.15s ease !important;
+}
+
+.playback-bar:hover .progress-bar__slider,
+.playback-bar:hover .x-progressBar-slider,
+.progress-bar:hover .progress-bar__slider,
+.volume-bar:hover .progress-bar__slider,
+.volume-bar:hover .x-progressBar-slider {
+  transform: translateY(-50%) scale(1.25) !important;
+  box-shadow: 0 0 12px 3px #38BDF8, 0 0 22px 6px rgba(56, 189, 248, 0.9) !important;
+}
+
+/* --------------------------------------------------------------------
+   MAIN PLAYER PLAY/PAUSE BUTTON STYLING
+   -------------------------------------------------------------------- */
+.player-controls__buttons button[data-testid="control-button-playpause"],
+.player-controls .main-playPauseButton-button,
+.main-playPauseButton-button,
+button[data-testid="control-button-playpause"],
+.player-controls__buttons button:nth-child(3),
+.main-playButton-PlayButton,
+.main-playButton-primary {
+  background-color: var(--behbahans-accent) !important;
+  background: var(--behbahans-accent) !important;
+  color: #0B0E14 !important;
+  border-radius: 50% !important;
+  border: none !important;
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.5) !important;
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+              background-color 0.2s ease,
+              box-shadow 0.2s ease !important;
+}
+
+.player-controls__buttons button[data-testid="control-button-playpause"]:hover,
+.player-controls .main-playPauseButton-button:hover,
+.main-playPauseButton-button:hover,
+.main-playButton-PlayButton:hover,
+.main-playButton-primary:hover {
+  background-color: var(--behbahans-accent-hover) !important;
+  background: var(--behbahans-accent-hover) !important;
+  transform: scale(1.08) !important;
+  box-shadow: var(--behbahans-accent-hover-glow) !important;
+}
+
+.player-controls__buttons button[data-testid="control-button-playpause"] svg,
+.player-controls .main-playPauseButton-button svg,
+.main-playPauseButton-button svg,
+button[data-testid="control-button-playpause"] svg {
+  fill: #0B0E14 !important;
+  color: #0B0E14 !important;
+}
+
+/* --------------------------------------------------------------------
+   PLAYLIST HEADER & TRACKLIST TABLE RESTORATION
+   -------------------------------------------------------------------- */
+.main-entityHeader-title,
+.main-entityHeader-title h1,
+.main-entityHeader-headerText h1,
+[data-testid="entityTitle"],
+[data-testid="entityTitle"] h1 {
+  display: block !important;
+  opacity: 1 !important;
+  color: #FFFFFF !important;
+  font-size: clamp(2rem, 5vw, 4.5rem) !important;
+  font-weight: 800 !important;
+  line-height: 1.1 !important;
+  visibility: visible !important;
+  z-index: 2 !important;
+}
+
+.main-entityHeader-container {
+  min-height: 240px !important;
+  opacity: 1 !important;
+  display: flex !important;
+  visibility: visible !important;
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+.main-entityHeader-imageContainer,
+.main-entityHeader-imageWrapper {
+  min-width: 192px !important;
+  min-height: 192px !important;
+  display: block !important;
+  visibility: visible !important;
+}
+
+.main-entityHeader-image {
+  min-width: 192px !important;
+  min-height: 192px !important;
+  width: 192px !important;
+  height: 192px !important;
+  display: block !important;
+  border-radius: var(--behbahans-radius-lg) !important;
+}
+
+.main-trackList-trackList {
+  display: block !important;
+  min-height: 500px !important;
+  height: auto !important;
+  overflow: visible !important;
+  visibility: visible !important;
+}
+
+.main-view-container__scroll-node-child {
+  padding-bottom: 120px !important;
+  height: auto !important;
+  overflow: visible !important;
+  display: block !important;
+}
+
+.main-trackList-trackListRow {
+  display: grid !important;
+  visibility: visible !important;
+}
+
+/* --------------------------------------------------------------------
+   SIDE PANELS & VIEWPORT ISOLATION
+   -------------------------------------------------------------------- */
+.main-nowPlayingView-section,
+.main-nowPlayingView-content,
+.main-buddyFeed-container,
+.Root__right-sidebar,
+aside.Root__right-sidebar {
+  background-color: var(--spice-main, #0B0E14) !important;
+}
+
+.Root__right-sidebar[aria-hidden="true"],
+.Root__right-sidebar:empty,
+aside.Root__right-sidebar[hidden] {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+.main-view-container {
+  overflow: hidden !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.Root__nav-bar,
+nav.Root__nav-bar,
+.main-yourLibraryX-entryPoints,
+.main-yourLibraryX-library,
+.LayoutResizer__resize-bar,
+.LayoutResizer__inline-end {
+  border-right: 1px solid var(--behbahans-sidebar-divider) !important;
+}
+
+/* --------------------------------------------------------------------
+   [BUG FIX 1] THEMED LIKED SONGS COVER & HERO ART (Image 1)
+   Obsidian navy gradient with cyan glow + glowing cyan heart
+   -------------------------------------------------------------------- */
+.main-entityHeader-container[data-context-item-uri*="collection:tracks"] .main-entityHeader-image,
+.main-entityHeader-container[data-context-item-uri*="collection:tracks"] .main-entityHeader-imageWrapper > div,
+.main-entityHeader-container[data-context-item-uri*="collection:tracks"] .main-entityHeader-imageWrapper,
+.main-entityHeader-container[data-context-item-uri*="collection:tracks"] .main-entityHeader-shadow,
+[data-uri*="collection/tracks"] .main-entityHeader-image,
+[data-uri*="collection/tracks"] .main-entityHeader-imageWrapper > div,
+[data-uri*="collection:tracks"] .main-entityHeader-image,
+[data-uri*="collection:tracks"] .main-entityHeader-imageWrapper > div,
+.collection-collectionEntityHeroCard-likedSongs,
+.collection-collectionEntityHeroCard-container .cover-art,
+div[style*="rgb(69, 10, 245)"],
+div[style*="rgb(69,10,245)"],
+div[style*="450af5"],
+a[href*="/collection/tracks"] .main-yourLibraryX-rowIcon,
+a[href*="/collection/tracks"] .main-yourLibraryX-rowIcon > div,
+.main-likedSongsButton-likedSongsIcon,
+.main-collectionLinkButton-likedSongs,
+[data-testid="card-click-handler"]:has(a[href*="/collection/tracks"]) [data-testid="card-image"],
+[data-testid="card-click-handler"]:has(a[href*="/collection/tracks"]) .main-cardImage-imageWrapper,
+[data-testid="card-click-handler"]:has(a[href*="/collection/tracks"]) div:has(> svg),
+div:has(> a[href*="/collection/tracks"]) [data-testid="card-image"],
+div:has(> a[href*="/collection/tracks"]) .main-cardImage-imageWrapper {
+  background: linear-gradient(135deg, #0B0E14 0%, #141824 50%, #1E2538 100%) !important;
+  background-image: linear-gradient(135deg, #0B0E14 0%, #141824 50%, #1E2538 100%) !important;
+  border: 1px solid rgba(56, 189, 248, 0.25) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(56, 189, 248, 0.08) !important;
+}
+
+/* Liked Songs glowing cyan heart icon */
+.main-entityHeader-container[data-context-item-uri*="collection:tracks"] svg,
+.main-entityHeader-container[data-context-item-uri*="collection:tracks"] svg *,
+[data-uri*="collection/tracks"] svg,
+[data-uri*="collection/tracks"] svg *,
+[data-uri*="collection:tracks"] svg,
+[data-uri*="collection:tracks"] svg *,
+.collection-collectionEntityHeroCard-container svg,
+div[style*="rgb(69, 10, 245)"] svg,
+div[style*="rgb(69, 10, 245)"] svg *,
+div[style*="rgb(69,10,245)"] svg,
+div[style*="rgb(69,10,245)"] svg *,
+a[href*="/collection/tracks"] svg,
+a[href*="/collection/tracks"] svg *,
+[data-testid="card-click-handler"]:has(a[href*="/collection/tracks"]) svg,
+[data-testid="card-click-handler"]:has(a[href*="/collection/tracks"]) svg * {
+  fill: #38BDF8 !important;
+  color: #38BDF8 !important;
+  filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.6)) !important;
+}
+
+/* --------------------------------------------------------------------
+   CAROUSEL & HORIZONTAL SPACING
+   -------------------------------------------------------------------- */
+.main-gridContainer-gridContainer,
+[data-testid="grid-container"],
+.main-shelf-shelfGrid {
+  --grid-gap: 16px !important;
+  gap: 16px !important;
+  padding: 0 4px !important;
+}
+
+.main-shelf-shelf {
+  margin-bottom: 28px !important;
+  overflow: visible !important;
+}
+
+.main-card-card {
+  min-width: 140px !important;
+  box-sizing: border-box !important;
+}
+
+.main-shelf-shelfCarousel {
+  padding: 0 8px 12px 8px !important;
+}
+
+/* --------------------------------------------------------------------
+   WINDOWS 11 ROUNDED CORNERS (ALBUM ART, CARDS, MODALS, BUTTONS)
+   -------------------------------------------------------------------- */
+.main-coverSlotExpanded-container img,
+.main-entityHeader-imageContainer img,
+.main-entityHeader-shadow,
+.main-cardImage-imageWrapper,
+.main-cardImage-imageWrapper img,
+.main-image-image,
+.main-cardImage-image,
+.main-nowPlayingWidget-coverArt img,
+.main-trackInfo-artwork img,
+.cover-art,
+.cover-art img,
+[data-testid="cover-art-image"],
+[data-testid="card-image"],
+[data-testid="card-image"] img {
+  border-radius: var(--behbahans-radius-md) !important;
+  overflow: hidden !important;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+}
+
+.main-card-card,
+.main-card-cardContainer,
+.Card,
+.x-heroCard-heroCard,
+[data-testid="card-click-handler"] {
+  background-color: var(--spice-card) !important;
+  border-radius: var(--behbahans-radius-lg) !important;
+  border: 1px solid rgba(30, 37, 56, 0.7) !important;
+  padding: 16px !important;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+              background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.25s ease,
+              box-shadow 0.25s ease !important;
+}
+
+.main-card-card:hover,
+.main-card-cardContainer:hover,
+.Card:hover,
+.x-heroCard-heroCard:hover,
+[data-testid="card-click-handler"]:hover {
+  background-color: var(--spice-highlight) !important;
+  border-color: rgba(56, 189, 248, 0.35) !important;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -6px rgba(0, 0, 0, 0.55), 
+              0 0 14px rgba(56, 189, 248, 0.12) !important;
+}
+
+/* Modals & Dialogs (Excluding User Avatar) */
+.main-contextMenu-menu,
+.main-trackCreditsModal-container,
+div[role="dialog"],
+.GenericModal,
+.x-settings-container,
+.main-embedWidgetGenerator-container,
+.tippy-box {
+  background-color: var(--spice-main-elevated) !important;
+  border-radius: var(--behbahans-radius-lg) !important;
+  border: 1px solid var(--behbahans-border-subtle) !important;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.65), 
+              0 0 1px rgba(56, 189, 248, 0.25) !important;
+  backdrop-filter: blur(16px);
+}
+
+.main-contextMenu-menuItemButton {
+  border-radius: var(--behbahans-radius-sm) !important;
+  margin: 2px 4px;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.main-contextMenu-menuItemButton:hover,
+.main-contextMenu-menuItemButton:focus {
+  background-color: var(--spice-highlight) !important;
+  color: var(--spice-button) !important;
+}
+
+/* --------------------------------------------------------------------
+   CLEAN, THIN DARK SCROLLBARS
+   -------------------------------------------------------------------- */
+::-webkit-scrollbar {
+  width: 6px !important;
+  height: 6px !important;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #1E2538 !important;
+  border-radius: 6px !important;
+  transition: background-color 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #283149 !important;
+  box-shadow: 0 0 6px rgba(56, 189, 248, 0.25);
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent !important;
+}
+
+.os-scrollbar {
+  padding: 2px !important;
+}
+
+.os-scrollbar-track {
+  background: transparent !important;
+}
+
+.os-scrollbar-handle {
+  background: #1E2538 !important;
+  border-radius: 6px !important;
+  opacity: 0.75;
+  transition: opacity 0.2s ease, background-color 0.2s ease !important;
+}
+
+.os-scrollbar:hover .os-scrollbar-handle,
+.os-scrollbar-handle:hover {
+  background: #283149 !important;
+  opacity: 1 !important;
+}
+
+/* --------------------------------------------------------------------
+   PLAYER BAR METADATA & HOVER TRANSITIONS
+   -------------------------------------------------------------------- */
+.main-nowPlayingBar-nowPlayingBar {
+  padding: 0 16px;
+}
+
+.main-trackInfo-name {
+  color: var(--spice-text) !important;
+  font-weight: 600;
+}
+
+.main-trackInfo-artists a,
+.main-trackInfo-artists span {
+  color: var(--spice-subtext) !important;
+  transition: color 0.2s ease;
+}
+
+.main-trackInfo-artists a:hover {
+  color: var(--spice-button) !important;
+  text-shadow: 0 0 8px rgba(56, 189, 248, 0.5);
+}
+
+.main-nowPlayingBar-extraControls button:hover,
+.main-nowPlayingBar-left button:hover {
+  color: var(--spice-button) !important;
+  transform: scale(1.05);
+}
+
+.main-trackList-trackListRow,
+div[data-testid="tracklist-row"] {
+  border-radius: var(--behbahans-radius-sm) !important;
+  margin: 1px 0 !important;
+  padding: 0 8px !important;
+  transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.15s cubic-bezier(0.4, 0, 0.2, 1),
+              color 0.2s ease !important;
+}
+
+.main-trackList-trackListRow:hover,
+div[data-testid="tracklist-row"]:hover {
+  background-color: rgba(30, 37, 56, 0.7) !important;
+}
+
+.main-trackList-trackListRow.main-trackList-active,
+div[data-testid="tracklist-row"][aria-selected="true"] {
+  background-color: rgba(36, 47, 69, 0.85) !important;
+}
+
+.main-trackList-trackListRow.main-trackList-active .main-trackList-rowTitle,
+.main-trackList-trackListRow.main-trackList-active .main-trackList-rowMarker,
+div[data-testid="tracklist-row"][aria-selected="true"] .main-trackList-rowTitle {
+  color: var(--spice-button) !important;
+  text-shadow: 0 0 10px rgba(56, 189, 248, 0.55);
+  font-weight: 600;
+}
+
+.main-yourLibraryX-navItem,
+.main-yourLibraryX-listItem,
+.main-rootlist-rootlistItem,
+.main-rootlist-rootlistItemLink,
+.main-navBar-navBarLink {
+  border-radius: var(--behbahans-radius-sm) !important;
+  transition: background-color 0.2s ease,
+              color 0.2s ease,
+              transform 0.15s ease !important;
+}
+
+.main-yourLibraryX-navItem:hover,
+.main-yourLibraryX-listItem:hover,
+.main-rootlist-rootlistItemLink:hover,
+.main-navBar-navBarLink:hover {
+  background-color: var(--spice-highlight) !important;
+  color: #FFFFFF !important;
+}
+
+.main-navBar-navBarLinkActive,
+.main-rootlist-rootlistItemLinkActive,
+.main-yourLibraryX-navItem[aria-selected="true"] {
+  background-color: rgba(56, 189, 248, 0.12) !important;
+  color: var(--spice-button) !important;
+  border-left: 3px solid var(--spice-button);
+}
