@@ -66,13 +66,9 @@ Cohesive dark theme suite built on deep obsidian navy (`#08090C`) and glowing sk
     </td>
   </tr>
   <tr>
-    <td width="50%" align="center">
+    <td colspan="2" align="center">
       <b>TeamSpeak 3</b> · <a href="INSTALL.md#teamspeak-3">Install →</a><br /><br />
-      <img src="screenshots/teamspeak.png" alt="TeamSpeak 3" />
-    </td>
-    <td width="50%" align="center">
-      <b>Windows Terminal</b> · <a href="INSTALL.md#windows-terminal">Install →</a><br /><br />
-      Color scheme preset in <a href="terminal/behbahans-night.json"><code>terminal/behbahans-night.json</code></a>.
+      <img src="screenshots/teamspeak.png" width="50%" alt="TeamSpeak 3" />
     </td>
   </tr>
 </table>
