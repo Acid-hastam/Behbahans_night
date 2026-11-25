@@ -32,7 +32,7 @@ Install directly from official built-in marketplaces without manual file copying
 | :--- | :--- | :--- |
 | **VS Code** | Live on [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=Acid-hastam.behbahans-night) | Search `Behbahans Night` in Extensions (`Acid-hastam.behbahans-night`) |
 | **Spicetify** | Live on **Spicetify Marketplace** | Search `Behbahans Night` in the Marketplace Themes tab |
-| **Obsidian** | Submitted to **Obsidian Community Themes** | Search `Behbahans Night` under Appearance → Themes ([Repo](https://github.com/Acid-hastam/obsidian-behbahans-night)) |
+| **Obsidian** | Packaging ready for [Obsidian Community](https://community.obsidian.md) | Dedicated theme repository: [`Acid-hastam/obsidian-behbahans-night`](https://github.com/Acid-hastam/obsidian-behbahans-night) |
 
 ---
 
