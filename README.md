@@ -62,6 +62,21 @@ A cohesive, late-night dark theme suite featuring deep obsidian navy backgrounds
 3. Copy the color scheme object from `terminal/behbahans-night.json` into your `"schemes"` array.
 4. Set `"colorScheme": "Behbahans Night"` under `"profiles"` -> `"defaults"`.
 
+### 5. Vencord (Discord)
+1. Copy `vencord/Behbahans_night.theme.css` into your Vencord themes folder:
+   - **Windows:** `%AppData%\Vencord\themes\`
+   - **Linux / macOS:** `~/.config/Vencord/themes/`
+2. Open **Discord -> Settings -> Vencord -> Themes**.
+3. Click **Load missing Themes** (if needed) and toggle **Behbahans Night** on.
+
+### 6. OBS Studio (30.2+)
+1. Copy `obs/Behbahans_night.ovt` into your OBS themes directory:
+   - **Windows (User):** `%AppData%\obs-studio\themes\`
+   - **Windows (System):** `C:\Program Files\obs-studio\data\obs-studio\themes\`
+   - **Linux:** `~/.config/obs-studio/themes/`
+2. Open **OBS Studio -> Settings -> Appearance**.
+3. Keep **Theme** set to **Yami** (base) and set **Style** to **Behbahans Night**, then click **Apply**.
+
 ---
 
 ## Matching Companion Projects

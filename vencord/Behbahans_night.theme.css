@@ -1,0 +1,254 @@
+/**
+ * @name Behbahans Night
+ * @author Acid-hastam
+ * @version 1.0.0
+ * @description Cozy late-night dark theme featuring deep obsidian navy backgrounds and glowing cyan accents.
+ * @source https://github.com/Acid-hastam/Behbahans_night
+ */
+
+/* ====================================================================
+   1. ROOT & THEME VARIABLES (Classic + Visual Refresh Tokens)
+   ==================================================================== */
+:root,
+.theme-dark,
+.visual-refresh {
+  /* Custom Behbahans Night Palette */
+  --bn-bg-canvas: #08090C;
+  --bn-bg-sidebar: #090C10;
+  --bn-bg-main: #0B0E14;
+  --bn-bg-card: #121622;
+  --bn-bg-elevated: #141824;
+  --bn-bg-hover: #1E2538;
+  --bn-bg-selected: #242F45;
+  --bn-border-subtle: #1E2538;
+  --bn-accent: #38BDF8;
+  --bn-accent-hover: #67E8F9;
+  --bn-accent-deep: #0284C7;
+  --bn-accent-muted: rgba(56, 189, 248, 0.14);
+  --bn-accent-glow: 0 0 12px rgba(56, 189, 248, 0.45);
+
+  /* Visual Refresh Surfaces */
+  --bg-base-primary: #0B0E14 !important;
+  --bg-base-secondary: #090C10 !important;
+  --bg-base-tertiary: #08090C !important;
+  --bg-surface-overlay: #121622 !important;
+  --bg-surface-raised: #141824 !important;
+  --bg-mod-subtle: rgba(30, 37, 56, 0.45) !important;
+  --bg-mod-normal: rgba(30, 37, 56, 0.7) !important;
+  --bg-mod-strong: #242F45 !important;
+
+  /* Classic Discord Background Tokens */
+  --background-primary: #0B0E14 !important;
+  --background-secondary: #090C10 !important;
+  --background-secondary-alt: #0D1017 !important;
+  --background-tertiary: #08090C !important;
+  --background-accent: #1E2538 !important;
+  --background-floating: #121622 !important;
+  --background-nested-floating: #141824 !important;
+  --background-mentioned: rgba(56, 189, 248, 0.1) !important;
+  --background-mentioned-hover: rgba(56, 189, 248, 0.16) !important;
+  --background-message-hover: rgba(20, 24, 36, 0.65) !important;
+  --background-modifier-hover: rgba(30, 37, 56, 0.65) !important;
+  --background-modifier-active: rgba(36, 47, 69, 0.85) !important;
+  --background-modifier-selected: rgba(56, 189, 248, 0.14) !important;
+  --background-modifier-accent: #1E2538 !important;
+
+  /* Chat Input & Interactive Controls */
+  --channeltextarea-background: #121622 !important;
+  --chat-background-default: #0B0E14 !important;
+  --input-background: #111622 !important;
+  --card-primary-bg: #121622 !important;
+  --card-secondary-bg: #141824 !important;
+  --home-background: #0B0E14 !important;
+  --modal-background: #121622 !important;
+  --modal-footer-background: #0D1017 !important;
+
+  /* Borders & Dividers */
+  --border-subtle: #1E2538 !important;
+  --border-normal: #242F45 !important;
+  --border-strong: #283149 !important;
+  --border-faint: rgba(30, 37, 56, 0.55) !important;
+
+  /* Brand & Accent Colors (Neon Sky-Blue) */
+  --brand-360: #67E8F9 !important;
+  --brand-400: #67E8F9 !important;
+  --brand-430: #38BDF8 !important;
+  --brand-500: #38BDF8 !important;
+  --brand-560: #0284C7 !important;
+  --brand-600: #0369A1 !important;
+  --brand-experiment: #38BDF8 !important;
+  --brand-experiment-500: #38BDF8 !important;
+  --brand-experiment-560: #0284C7 !important;
+  --brand-experiment-600: #0369A1 !important;
+  --control-brand-foreground: #38BDF8 !important;
+  --mention-foreground: #67E8F9 !important;
+  --mention-background: rgba(56, 189, 248, 0.14) !important;
+
+  /* Status & Feedback Colors */
+  --status-positive: #10B981 !important;
+  --status-positive-background: #10B981 !important;
+  --status-warning: #F59E0B !important;
+  --status-danger: #EF4444 !important;
+  --info-warning-foreground: #F59E0B !important;
+  --info-danger-foreground: #EF4444 !important;
+
+  /* Typography & Icons */
+  --header-primary: #FFFFFF !important;
+  --header-secondary: #A0AAB8 !important;
+  --text-normal: #F0F2F5 !important;
+  --text-muted: #7E8696 !important;
+  --text-link: #38BDF8 !important;
+  --text-brand: #38BDF8 !important;
+  --channels-default: #8E9BAE !important;
+  --channel-icon: #7E8696 !important;
+  --interactive-normal: #A0AAB8 !important;
+  --interactive-hover: #FFFFFF !important;
+  --interactive-active: #38BDF8 !important;
+  --interactive-muted: #475569 !important;
+
+  /* Scrollbars */
+  --scrollbar-thin-thumb: #1E2538 !important;
+  --scrollbar-thin-track: transparent !important;
+  --scrollbar-auto-thumb: #1E2538 !important;
+  --scrollbar-auto-track: transparent !important;
+  --scrollbar-auto-scrollbar-color-thumb: #1E2538 !important;
+  --scrollbar-auto-scrollbar-color-track: transparent !important;
+}
+
+/* ====================================================================
+   2. STRUCTURAL SURFACES & GLOW ACCENTS
+   ==================================================================== */
+
+/* App Shell & Server Rail */
+body,
+#app-mount,
+[class*="app_"],
+[class*="bg_"] {
+  background-color: var(--bn-bg-canvas) !important;
+}
+
+[class*="guilds_"],
+nav[aria-label="Servers sidebar"] {
+  background-color: var(--bn-bg-canvas) !important;
+}
+
+/* Channel List, DM List & User Panel */
+[class*="sidebar_"],
+[class*="sidebarList_"] {
+  background-color: var(--bn-bg-sidebar) !important;
+  border-right: 1px solid var(--bn-border-subtle) !important;
+}
+
+[class*="panels_"] {
+  background-color: #0D1017 !important;
+  border-top: 1px solid rgba(56, 189, 248, 0.12) !important;
+}
+
+/* Main Chat Canvas, Header & Members List */
+[class*="chat_"],
+[class*="chatContent_"],
+[class*="container_"][class*="themed_"] {
+  background-color: var(--bn-bg-main) !important;
+}
+
+section[class*="title_"],
+[class*="headerBar_"] {
+  background-color: var(--bn-bg-main) !important;
+  border-bottom: 1px solid var(--bn-border-subtle) !important;
+  box-shadow: none !important;
+}
+
+[class*="members_"],
+[class*="membersWrap_"] {
+  background-color: var(--bn-bg-sidebar) !important;
+  border-left: 1px solid var(--bn-border-subtle) !important;
+}
+
+/* Message Composer Input */
+[class*="channelTextArea_"] [class*="scrollableContainer_"],
+[class*="themedBackground_"] {
+  background-color: var(--bn-bg-card) !important;
+  border: 1px solid var(--bn-border-subtle) !important;
+  border-radius: 10px !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+[class*="channelTextArea_"]:focus-within [class*="scrollableContainer_"] {
+  border-color: rgba(56, 189, 248, 0.55) !important;
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.16) !important;
+}
+
+/* Selected Channel & Active Navigation Highlight */
+[class*="modeSelected_"] [class*="link_"],
+[class*="selected_"][class*="channel_"] [class*="link_"] {
+  background-color: var(--bn-accent-muted) !important;
+  border-left: 2px solid var(--bn-accent) !important;
+}
+
+[class*="modeSelected_"] [class*="name_"],
+[class*="modeSelected_"] [class*="icon_"] {
+  color: var(--bn-accent) !important;
+}
+
+/* Mentioned Messages */
+[class*="mentioned_"] {
+  background-color: rgba(56, 189, 248, 0.08) !important;
+}
+
+[class*="mentioned_"]::before {
+  background-color: var(--bn-accent) !important;
+}
+
+/* Embeds, Code Blocks & Modals */
+[class*="embedFull_"] {
+  background-color: var(--bn-bg-card) !important;
+  border-color: var(--bn-accent) !important;
+}
+
+pre code,
+[class*="markup_"] code {
+  background-color: #08090C !important;
+  border: 1px solid var(--bn-border-subtle) !important;
+  border-radius: 6px !important;
+}
+
+[class*="popout_"],
+[class*="menu_"],
+[class*="userPopoutOuter_"],
+[class*="root_"][role="dialog"] {
+  background-color: var(--bn-bg-card) !important;
+  border: 1px solid var(--bn-border-subtle) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.65) !important;
+}
+
+/* Primary Action Buttons & Unread Pills */
+button[class*="lookFilled_"][class*="colorBrand_"],
+[class*="button_"][class*="filled_"] {
+  background-color: var(--bn-accent-deep) !important;
+  color: #FFFFFF !important;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+button[class*="lookFilled_"][class*="colorBrand_"]:hover,
+[class*="button_"][class*="filled_"]:hover {
+  background-color: var(--bn-accent) !important;
+  color: #08090C !important;
+  box-shadow: var(--bn-accent-glow) !important;
+}
+
+[class*="unreadPill_"],
+[class*="numberBadge_"] {
+  background-color: var(--bn-accent) !important;
+  color: #08090C !important;
+  font-weight: 700 !important;
+}
+
+/* Subtle Scrollbar Polish */
+::-webkit-scrollbar-thumb {
+  background-color: #1E2538 !important;
+  border-radius: 6px !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #283149 !important;
+}
