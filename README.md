@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/icon.png" width="96" alt="Behbahans Night" />
+<img src="assets/icon.png" width="84" alt="Behbahans Night" />
 
 # Behbahans Night
 
@@ -14,71 +14,87 @@ Cohesive dark theme suite built on deep obsidian navy (`#08090C`) and glowing sk
 
 ## Palette
 
-| Token | Hex | Role |
-| :--- | :--- | :--- |
-| Canvas | `#08090C` | App frame & deepest backdrop |
-| Base | `#0B0E14` | Primary content & chat canvas |
-| Surface | `#121622` | Cards, panels & inputs |
-| Border | `#1E2538` | Dividers & hover surfaces |
-| Accent | `#38BDF8` | Active states, links & glow |
+| Canvas | Base | Surface | Border | Accent |
+| :---: | :---: | :---: | :---: | :---: |
+| `#08090C` | `#0B0E14` | `#121622` | `#1E2538` | `#38BDF8` |
 
 ---
 
 ## Community Stores
 
-Install directly from official built-in marketplaces without manual file copying:
-
-| App | Availability | How to Find |
+| App | Status | Install |
 | :--- | :--- | :--- |
-| **VS Code** | Live on [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=Acid-hastam.behbahans-night) | Search `Behbahans Night` in Extensions (`Acid-hastam.behbahans-night`) |
-| **Spicetify** | Live on **Spicetify Marketplace** | Search `Behbahans Night` in the Marketplace Themes tab |
-| **Obsidian** | Packaging ready for [Obsidian Community](https://community.obsidian.md) | Dedicated theme repository: [`Acid-hastam/obsidian-behbahans-night`](https://github.com/Acid-hastam/obsidian-behbahans-night) |
+| **VS Code** | Live on [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=Acid-hastam.behbahans-night) | Search `Behbahans Night` (`Acid-hastam.behbahans-night`) |
+| **Spicetify** | Live on **Spicetify Marketplace** | Search `Behbahans Night` in Marketplace → Themes |
+| **Obsidian** | Ready for [Obsidian Community](https://community.obsidian.md) | Repo: [`Acid-hastam/obsidian-behbahans-night`](https://github.com/Acid-hastam/obsidian-behbahans-night) |
 
 ---
 
 ## Themes
 
-> Manual setup instructions for all platforms are available in the **[Installation Guide](INSTALL.md)**.
+> Full setup steps are in **[INSTALL.md](INSTALL.md)**.
 
-### VS Code · `Community Store` · [Install →](INSTALL.md#vs-code)
-![VS Code](screenshots/vscode.png)
-
-### Obsidian · `Community Store` · [Install →](INSTALL.md#obsidian)
-![Obsidian](screenshots/obsidian.png)
-
-### Spicetify · `Community Store` · [Install →](INSTALL.md#spicetify)
-![Spicetify](screenshots/spicetify.png)
-
-### Vencord · [Install →](INSTALL.md#vencord)
-![Vencord](screenshots/vencord.png)
-
-### Telegram Desktop · [Install →](INSTALL.md#telegram-desktop)
-![Telegram Desktop](screenshots/telegram.png)
-
-### TeamSpeak 3 · [Install →](INSTALL.md#teamspeak-3)
-![TeamSpeak 3](screenshots/teamspeak.png)
-
-### OBS Studio · [Install →](INSTALL.md#obs-studio)
-![OBS Studio](screenshots/obs.png)
-
-### Windows Terminal · [Install →](INSTALL.md#windows-terminal)
-Color scheme available in [`terminal/behbahans-night.json`](terminal/behbahans-night.json).
+<table>
+  <tr>
+    <td width="50%" align="center">
+      <b>VS Code</b> · <code>Community Store</code> · <a href="INSTALL.md#vs-code">Install →</a><br /><br />
+      <img src="screenshots/vscode.png" alt="VS Code" />
+    </td>
+    <td width="50%" align="center">
+      <b>Obsidian</b> · <code>Community Store</code> · <a href="INSTALL.md#obsidian">Install →</a><br /><br />
+      <img src="screenshots/obsidian.png" alt="Obsidian" />
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">
+      <b>Spicetify</b> · <code>Community Store</code> · <a href="INSTALL.md#spicetify">Install →</a><br /><br />
+      <img src="screenshots/spicetify.png" alt="Spicetify" />
+    </td>
+    <td width="50%" align="center">
+      <b>Vencord</b> · <a href="INSTALL.md#vencord">Install →</a><br /><br />
+      <img src="screenshots/vencord.png" alt="Vencord" />
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">
+      <b>Telegram Desktop</b> · <a href="INSTALL.md#telegram-desktop">Install →</a><br /><br />
+      <img src="screenshots/telegram.png" alt="Telegram Desktop" />
+    </td>
+    <td width="50%" align="center">
+      <b>OBS Studio</b> · <a href="INSTALL.md#obs-studio">Install →</a><br /><br />
+      <img src="screenshots/obs.png" alt="OBS Studio" />
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">
+      <b>TeamSpeak 3</b> · <a href="INSTALL.md#teamspeak-3">Install →</a><br /><br />
+      <img src="screenshots/teamspeak.png" alt="TeamSpeak 3" />
+    </td>
+    <td width="50%" align="center">
+      <b>Windows Terminal</b> · <a href="INSTALL.md#windows-terminal">Install →</a><br /><br />
+      Color scheme preset in <a href="terminal/behbahans-night.json"><code>terminal/behbahans-night.json</code></a>.
+    </td>
+  </tr>
+</table>
 
 ---
 
 ## Companions
 
-Standalone utilities sharing the Behbahans Night aesthetic:
-
-### [Foshorde](https://github.com/Acid-hastam/Foshorde)
-Hardware-accelerated video compressor with exact target-size presets for Discord, WhatsApp, Telegram, and YouTube.
-
-![Foshorde](screenshots/foshorde.png)
-
-### [KojaRaft](https://github.com/Acid-hastam/KojaRaft)
-Real-time network monitor tracking per-application bandwidth across VPN and direct connections.
-
-![KojaRaft](screenshots/kojaraft.png)
+<table>
+  <tr>
+    <td width="50%" align="center">
+      <b><a href="https://github.com/Acid-hastam/Foshorde">Foshorde</a></b><br />
+      <sub>Hardware-accelerated video compressor with target-size presets.</sub><br /><br />
+      <img src="screenshots/foshorde.png" alt="Foshorde" />
+    </td>
+    <td width="50%" align="center">
+      <b><a href="https://github.com/Acid-hastam/KojaRaft">KojaRaft</a></b><br />
+      <sub>Real-time per-app network monitor across VPN & direct traffic.</sub><br /><br />
+      <img src="screenshots/kojaraft.png" alt="KojaRaft" />
+    </td>
+  </tr>
+</table>
 
 ---
 
