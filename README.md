@@ -29,6 +29,12 @@ A cohesive, late-night dark theme suite featuring deep obsidian navy backgrounds
 ### TeamSpeak 3
 ![TeamSpeak 3 Preview](screenshots/teamspeak.png)
 
+### Vencord (Discord)
+![Vencord Preview](screenshots/vencord.png)
+
+### OBS Studio
+![OBS Studio Preview](screenshots/obs.png)
+
 ---
 
 ## Installation
