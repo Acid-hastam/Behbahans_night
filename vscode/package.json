@@ -1,0 +1,35 @@
+{
+  "name": "behbahans-night",
+  "displayName": "Behbahans Night",
+  "description": "Cohesive late-night dark theme featuring deep obsidian navy backgrounds and glowing sky-blue accents.",
+  "version": "1.0.0",
+  "publisher": "Acid-hastam",
+  "license": "MIT",
+  "icon": "icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Acid-hastam/Behbahans_night.git"
+  },
+  "engines": {
+    "vscode": "^1.70.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+    "dark",
+    "midnight",
+    "obsidian",
+    "cyan",
+    "minimal"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Behbahans Night",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Behbahans_night-color-theme.json"
+      }
+    ]
+  }
+}

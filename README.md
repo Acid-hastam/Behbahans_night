@@ -1,10 +1,12 @@
 <div align="center">
 
+<img src="assets/icon.png" width="96" alt="Behbahans Night" />
+
 # Behbahans Night
 
 Cohesive dark theme suite built on deep obsidian navy (`#08090C`) and glowing sky-blue (`#38BDF8`) accents.
 
-[Palette](#palette) · [Themes](#themes) · [Installation](INSTALL.md) · [Companions](#companions) · [License](#license)
+[Palette](#palette) · [Community Stores](#community-stores) · [Themes](#themes) · [Installation](INSTALL.md) · [Companions](#companions)
 
 </div>
 
@@ -22,11 +24,29 @@ Cohesive dark theme suite built on deep obsidian navy (`#08090C`) and glowing sk
 
 ---
 
+## Community Stores
+
+Install directly from official built-in marketplaces without manual file copying:
+
+| App | Availability | How to Find |
+| :--- | :--- | :--- |
+| **VS Code** | Live on [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=Acid-hastam.behbahans-night) | Search `Behbahans Night` in Extensions (`Acid-hastam.behbahans-night`) |
+| **Spicetify** | Live on **Spicetify Marketplace** | Search `Behbahans Night` in the Marketplace Themes tab |
+| **Obsidian** | Submitted to **Obsidian Community Themes** | Search `Behbahans Night` under Appearance → Themes ([Repo](https://github.com/Acid-hastam/obsidian-behbahans-night)) |
+
+---
+
 ## Themes
 
-> Setup steps for all supported apps are in the **[Installation Guide](INSTALL.md)**.
+> Manual setup instructions for all platforms are available in the **[Installation Guide](INSTALL.md)**.
 
-### Spicetify · [Install →](INSTALL.md#spicetify)
+### VS Code · `Community Store` · [Install →](INSTALL.md#vs-code)
+![VS Code](screenshots/vscode.png)
+
+### Obsidian · `Community Store` · [Install →](INSTALL.md#obsidian)
+![Obsidian](screenshots/obsidian.png)
+
+### Spicetify · `Community Store` · [Install →](INSTALL.md#spicetify)
 ![Spicetify](screenshots/spicetify.png)
 
 ### Vencord · [Install →](INSTALL.md#vencord)
