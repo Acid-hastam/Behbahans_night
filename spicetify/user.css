@@ -74,30 +74,51 @@ footer.main-nowPlayingBar-container {
 }
 
 /* --------------------------------------------------------------------
-   TOP FILTER CHIPS SECTION (Home View)
+   TOP FILTER CHIPS SECTION (Home View) & TOP BAR STACKING
    -------------------------------------------------------------------- */
-.main-home-filterChipsSection,
-[data-testid="home-filter-chips"],
-.search-searchCategory-categoryGrid {
-  position: relative !important;
-  margin-top: 0 !important;
-  padding-top: 10px !important;
-  padding-bottom: 10px !important;
-  overflow: visible !important;
-  background-color: var(--behbahans-bg-main) !important;
-  background-image: none !important;
-  z-index: 5 !important;
+.Root__globalNav {
+  z-index: 20 !important;
 }
 
-.main-topBar-container,
+.main-home-filterChipsContainer {
+  position: sticky !important;
+  top: 0 !important;
+  background-color: var(--behbahans-bg-main) !important;
+  background-image: none !important;
+  z-index: 4 !important;
+}
+
+.main-home-filterChipsSection {
+  position: absolute !important;
+  inset: 0 !important;
+  background-color: var(--behbahans-bg-main) !important;
+  background-image: none !important;
+  opacity: 1 !important;
+}
+
+.main-home-filterChipsSection::after {
+  display: none !important;
+}
+
+.search-searchCategory-categoryGrid {
+  background-color: var(--behbahans-bg-main) !important;
+  background-image: none !important;
+}
+
+.main-topBar-container {
+  background-color: transparent !important;
+  background-image: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  z-index: 1 !important;
+}
+
 .main-topBar-background,
 .Root__top-bar,
 .Root__top-bar header {
   background-color: var(--behbahans-bg-main) !important;
   background-image: none !important;
-  backdrop-filter: blur(20px) !important;
-  -webkit-backdrop-filter: blur(20px) !important;
-  z-index: 10 !important;
+  z-index: 1 !important;
 }
 
 /* Kill dynamic purple background header overlays */

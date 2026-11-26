@@ -17,7 +17,7 @@ ext install Acid-hastam.behbahans-night
 2. Restart VS Code, press `Ctrl + K` then `Ctrl + T`, and select **Behbahans Night**.
 
 ## Obsidian
-**Community Store:** Search **Behbahans Night** under **Settings → Appearance → Themes → Manage** ([Dedicated Repo](https://github.com/Acid-hastam/obsidian-behbahans-night)).
+**Community Store:** Install from [Obsidian Community](https://community.obsidian.md/themes/behbahans-night) or search **Behbahans Night** under **Settings → Appearance → Themes → Manage** ([Dedicated Repo](https://github.com/Acid-hastam/obsidian-behbahans-night)).
 
 **Manual:**
 1. Copy `obsidian/` into `<your-vault>\.obsidian\themes\Behbahans Night\`.

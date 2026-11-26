@@ -26,7 +26,7 @@ Cohesive dark theme suite built on deep obsidian navy (`#08090C`) and glowing sk
 | :--- | :--- | :--- |
 | **VS Code** | Live on [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=Acid-hastam.behbahans-night) | Search `Behbahans Night` (`Acid-hastam.behbahans-night`) |
 | **Spicetify** | Live on **Spicetify Marketplace** | Search `Behbahans Night` in Marketplace → Themes |
-| **Obsidian** | Ready for [Obsidian Community](https://community.obsidian.md) | Repo: [`Acid-hastam/obsidian-behbahans-night`](https://github.com/Acid-hastam/obsidian-behbahans-night) |
+| **Obsidian** | Live on [Obsidian Community](https://community.obsidian.md/themes/behbahans-night) | Search `Behbahans Night` in Settings → Appearance → Themes |
 
 ---
 
